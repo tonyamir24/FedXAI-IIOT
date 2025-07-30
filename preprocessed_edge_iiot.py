@@ -212,9 +212,12 @@ df['Attack_type'] = label_encoder.fit_transform(df['Attack_type'])
 attack_mapping = dict(zip(label_encoder.classes_, label_encoder.transform(label_encoder.classes_)))
 print("Label mapping:", attack_mapping)
 
-# Split the data (80% train, 20% test)
-df_train, df_test = train_test_split(df, test_size=0.2, random_state=42, shuffle=True, stratify=df['Attack_type'])
+df.to_csv('./dataset/edge_iiot.csv', index=False)
 
-# Save train and test sets separately
-df_train.to_csv('./dataset/train_edge_iiot.csv', index=False)
-df_test.to_csv('./dataset/test_edge_iiot.csv', index=False)
+
+# # Split the data (80% train, 20% test)
+# df_train, df_test = train_test_split(df, test_size=0.2, random_state=42, shuffle=True, stratify=df['Attack_type'])
+
+# # Save train and test sets separately
+# df_train.to_csv('./dataset/train_edge_iiot.csv', index=False)
+# df_test.to_csv('./dataset/test_edge_iiot.csv', index=False)
