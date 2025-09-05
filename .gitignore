@@ -1,5 +1,6 @@
 dataset/
-old/
-saved_models/
 
-lime_explanation.html
+*.html
+*.png
+*.json
+*.csv
